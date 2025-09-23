@@ -5,7 +5,7 @@
 <p align="center">
 <a href="https://i-meto.com"><img alt="Author" src="https://img.shields.io/badge/Author-METO-blue.svg?style=flat-square"/></a>
 <a href="https://www.npmjs.com/package/meting"><img alt="Version" src="https://img.shields.io/npm/v/meting.svg?style=flat-square"/></a>
-<a href="https://travis-ci.org/metowolf/MetingJS"><img alt="Travis" src="https://img.shields.io/travis/metowolf/MetingJS.svg?style=flat-square"></a>
+<a href="https://github.com/metowolf/MetingJS/actions"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/metowolf/MetingJS/ci.yml?style=flat-square"></a>
 <img alt="License" src="https://img.shields.io/npm/l/meting.svg?style=flat-square"/>
 </p>
 
@@ -19,8 +19,8 @@ https://github.com/MoePlayer/APlayer
 |2.0.x|Latest|[![](https://img.shields.io/badge/APlayer-^1.10.0-green.svg?longCache=true&style=for-the-badge)](https://github.com/MoePlayer/APlayer)|
 
 ## CDN
- - https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js
- - https://unpkg.com/meting@2.0.1/dist/Meting.min.js
+ - https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
+ - https://unpkg.com/meting@2/dist/Meting.min.js
 
 ## Quick Start
 ```html
@@ -80,6 +80,7 @@ Fixed mode with Lyric text
 |server          |**require**   |music platform: `netease`, `tencent`, `kugou`, `xiami`, `baidu`|
 |type            |**require**   |`song`, `playlist`, `album`, `search`, `artist`|
 |auto            |options       |music link, support: `netease`, `tencent`, `xiami`|
+|api             |options       |custom api url, support self-hosted [Meting API](https://github.com/metowolf/Meting)|
 |fixed           |`false`       |enable fixed mode|
 |mini            |`false`       |enable mini mode|
 |autoplay        |`false`       |audio autoplay|
@@ -100,6 +101,8 @@ Documentation for APlayer can be found at https://aplayer.js.org/#/home?id=optio
 
 MetingJS allow you to use self-hosted API, [more information about Meting](https://github.com/metowolf/Meting).
 
+### Global API Configuration
+
 ```html
 <script>
 var meting_api='http://example.com/api.php?server=:server&type=:type&id=:id&auth=:auth&r=:r';
@@ -107,6 +110,26 @@ var meting_api='http://example.com/api.php?server=:server&type=:type&id=:id&auth
 
 <script src="dist/Meting.min.js"></script>
 ```
+
+### Per-Element API Configuration
+
+You can also set a custom API for individual `<meting-js>` elements using the `api` attribute:
+
+```html
+<meting-js
+	server="netease"
+	type="song"
+	id="28391863"
+	api="https://your-custom-api.com/meting?server=:server&type=:type&id=:id&r=:r">
+</meting-js>
+```
+
+### API Priority
+
+The API selection follows this priority order:
+1. **Element `api` attribute** (highest priority)
+2. **Global `window.meting_api` variable**
+3. **Built-in default API** (lowest priority)
 
 ## Browser support
 

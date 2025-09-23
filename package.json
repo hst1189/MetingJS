@@ -1,7 +1,8 @@
 {
  "name": "meting",
- "version": "2.0.1",
+ "version": "2.0.2",
  "description": "Wow, such a beautiful html5 music player (with Meting API)",
+ "type": "module",
  "license": "MIT",
  "homepage": "https://github.com/metowolf/MetingJS",
  "repository": {
@@ -15,8 +16,8 @@
  },
  "main": "dist",
  "scripts": {
-  "lint": "eslint source",
-  "build": "del dist && mkdir dist && babel source/Meting.js -o dist/Meting.min.js",
+  "lint": "eslint src",
+  "build": "del dist && mkdir dist && rollup -c",
   "test": "npm run build",
   "prepublishOnly": "npm run build"
  },
@@ -31,11 +32,10 @@
   "html5"
  ],
  "devDependencies": {
-  "@babel/cli": "^7.2.3",
-  "@babel/core": "^7.3.3",
-  "@babel/preset-env": "^7.3.1",
-  "babel-preset-minify": "^0.5.0",
+  "@rollup/plugin-replace": "^6.0.2",
+  "@rollup/plugin-terser": "^0.4.0",
   "del-cli": "^1.1.0",
-  "eslint": "^5.14.0"
+  "eslint": "^5.14.0",
+  "rollup": "^4.0.0"
  }
 }

@@ -8,6 +8,10 @@ module.exports = {
     "parserOptions": {
         "ecmaVersion": 2018
     },
+    "globals": {
+        "APlayer": "readonly",
+        "fetch": "readonly"
+    },
     "rules": {
         "indent": [
             "error",
