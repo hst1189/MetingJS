@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️小饅頭の音乐播放器❤️</title>
+    <!-- require APlayer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+</head>
+
+<body>
+    <details>
+        <summary>经典老歌</summary>
+        <meting-js server="netease" type="search" id="老歌"
+            api="https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r">
+        </meting-js>
+    </details>
+    <br>
+
+    <details>
+        <summary>越南语榜（每周四更新）</summary>
+        <meting-js server="netease" type="playlist" id="6732014811"
+            api="https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r">
+        </meting-js>
+    </details>
+    <br>
+
+    <details>
+        <summary>日本Oricon榜（每天更新）</summary>
+        <meting-js server="netease" type="playlist" id="60131"
+            api="https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r">
+        </meting-js>
+    </details>
+    <br>
+
+    <details>
+        <summary>网易云日语榜（每天更新）</summary>
+        <meting-js server="netease" type="playlist" id="5059644681"
+            api="https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r">
+        </meting-js>
+    </details>
+    <br>
+
+    <details>
+        <summary>美国Billboard榜（每周三更新）</summary>
+        <meting-js server="netease" type="playlist" id="60198"
+            api="https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r">
+        </meting-js>
+    </details>
+</body>
+
+</html>
